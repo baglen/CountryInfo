@@ -28,7 +28,7 @@ namespace CountryInfo.Windows
             InitializeComponent();
             Manager.baseFrame = navigationFrame;
 
-            navigationFrame.Navigate(new ChangeConnectionStringPage(this));
+            navigationFrame.Navigate(new SelectCountryPage());
         }
 
         private void btnSelectCountry_Click(object sender, RoutedEventArgs e)

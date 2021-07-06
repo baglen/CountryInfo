@@ -60,6 +60,11 @@
                     <Setter Property="Height" Value="35"></Setter>
                     <Setter Property="Foreground" Value="White"></Setter>
                     <Setter Property="FontWeight" Value="Regular"></Setter>
+                    <Setter Property="BitmapEffect">
+                        <Setter.Value>
+                            <DropShadowBitmapEffect Color="Black" Direction="320" Softness="1" ShadowDepth="10" Opacity="0.2" />
+                        </Setter.Value>
+                    </Setter>
                     <Setter Property="FontSize" Value="15"></Setter>
                     <Setter Property="Template">
                         <Setter.Value>

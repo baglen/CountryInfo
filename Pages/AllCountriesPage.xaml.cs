@@ -32,7 +32,8 @@ namespace CountryInfo.Pages
                 if (Visibility == Visibility.Visible)
                 {
                     dGridCountries.ItemsSource = CountriesEntities.GetContext().Country.ToList();
-                }    
+                }
+          
             
         }
         private void txtBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
