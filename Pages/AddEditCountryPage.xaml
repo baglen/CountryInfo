@@ -1,0 +1,82 @@
+﻿<Page x:Class="CountryInfo.Pages.AddEditCountryPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CountryInfo.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditCountryPage">
+
+    <Grid UseLayoutRounding="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2"></Grid>
+        <TextBlock Grid.ColumnSpan="2" Text="Изменить/Добавить страну" FontSize="30" HorizontalAlignment="Center" Margin="4"></TextBlock>
+        <Grid Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Название" FontSize="20" Grid.Row="0"></TextBlock>
+            <TextBlock Text="Код страны" FontSize="20" Grid.Row="1"></TextBlock>
+            <TextBlock Text="Столица" FontSize="20" Grid.Row="2"></TextBlock>
+            <TextBlock Text="Площадь" FontSize="20" Grid.Row="3"></TextBlock>
+            <TextBlock Text="Население" FontSize="20" Grid.Row="4"></TextBlock>
+            <TextBlock Text="Регион" FontSize="20" Grid.Row="5"></TextBlock>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+                <RowDefinition Height="45"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox Name="txtBoxTitle" Grid.Row="0" Text="{Binding Title}" AllowDrop="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" MaxLength="50" ></TextBox>
+            <TextBox Name="txtBoxCode" Grid.Row="1" Text="{Binding CountryCode}" MaxLength="2" />
+            <TextBox Name="txtBoxCapital" Grid.Row="2" Text="{Binding Capital}" MaxLength="100" ></TextBox>
+            <TextBox Name="txtBoxSquare" Grid.Row="3" Text="{Binding Square}"  MaxLength="50" PreviewTextInput="txtBoxSquare_PreviewTextInput"></TextBox>
+            <TextBox Name="txtBoxPopulation" Grid.Row="4" Text="{Binding Population}" MaxLength="50" PreviewTextInput="txtBoxPopulation_PreviewTextInput"></TextBox>
+            <TextBox Name="txtBoxRegion" Grid.Row="5" Text="{Binding Region}" MaxLength="50" ></TextBox>
+        </Grid>
+        <Button Content="Сохранить" Name="btnSave" Click="btnSave_Click" Grid.Row="2" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#71AAEB"></Setter>
+                    <Setter Property="Width" Value="135"></Setter>
+                    <Setter Property="Height" Value="35"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="FontWeight" Value="Regular"></Setter>
+                    <Setter Property="FontSize" Value="15"></Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="3">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#ADD3FF"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Page>
