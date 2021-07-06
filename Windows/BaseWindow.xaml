@@ -15,6 +15,7 @@
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <Button Content="Ввод страны" Name="btnSelectCountry" Click="btnSelectCountry_Click"></Button>
                 <Button Content="Все страны" Name="btnAllCountries" Click="btnAllCountries_Click"></Button>
+                <Button Content="Строка подкл." Name="btnChangeConnString" Click="btnChangeConnString_Click"></Button>
                 <Button Content="Назад" Name="btnBack" Click="btnBack_Click"></Button>
             </StackPanel>
         </Grid>

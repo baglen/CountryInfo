@@ -28,17 +28,12 @@ namespace CountryInfo.Pages
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            try
-            {
+           
                 if (Visibility == Visibility.Visible)
                 {
                     dGridCountries.ItemsSource = CountriesEntities.GetContext().Country.ToList();
                 }    
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка обновления данных!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            
         }
         private void txtBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {

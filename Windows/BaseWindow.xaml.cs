@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CountryInfo.Windows;
 using CountryInfo.Pages;
+using System.Configuration;
 
 namespace CountryInfo.Windows
 {
@@ -26,7 +27,8 @@ namespace CountryInfo.Windows
         {
             InitializeComponent();
             Manager.baseFrame = navigationFrame;
-            navigationFrame.Navigate(new AllCountriesPage());
+
+            navigationFrame.Navigate(new ChangeConnectionStringPage(this));
         }
 
         private void btnSelectCountry_Click(object sender, RoutedEventArgs e)
@@ -57,6 +59,11 @@ namespace CountryInfo.Windows
                 btnBack.Visibility = Visibility.Hidden;
             }
                 
+        }
+
+        private void btnChangeConnString_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.baseFrame.Navigate(new ChangeConnectionStringPage(this));
         }
     }
 }
